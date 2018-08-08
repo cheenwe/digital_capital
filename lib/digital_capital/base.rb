@@ -4,7 +4,7 @@ module Base
 	  base.extend(ClassMethods)
 	end
 
-	Mfraction = ['角', '分']
+	Mfraction = ['角', '分', '厘']
 	Mdigit = [
 		'零', '壹', '贰', '叁', '肆',
 		'伍', '陆', '柒', '捌', '玖'

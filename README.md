@@ -1,6 +1,8 @@
 # DigitalCapital
 
-人民币大写转换 （将阿拉伯数字转换成中文大写、人民币大写转换工具）
+[![Build Status](https://travis-ci.org/cheenwe/digital_capital.svg?branch=master)](https://travis-ci.org/cheenwe/digital_capital)
+
+货币大写金额转换/人民币大写转换 （将阿拉伯数字转换成中文大写、人民币大写转换）
 
 ## Installation
 
@@ -12,15 +14,20 @@ gem 'digital_capital'
 
 And then execute:
 
-    $ bundle
+		$ bundle
 
 Or install it yourself as:
 
-    $ gem install digital_capital
+		$ gem install digital_capital
 
 ## Usage
 
-		$	DigitalCapital.cb(199499499.922)
+>DigitalCapital.cb(199499499.922) #  => "壹亿玖仟玖佰肆拾玖万玖仟肆佰玖拾玖元玖角贰分贰厘"
+
+> DigitalCapital.cb(1992) #=> "壹仟玖佰玖拾贰元整"
+
+> DigitalCapital.cb(-119.92) #=> "欠壹佰壹拾玖元玖角贰分"
+
 
 ## Development
 

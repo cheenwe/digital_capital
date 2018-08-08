@@ -5,21 +5,29 @@ class DigitalCapitalTest < Minitest::Test
 		refute_nil ::DigitalCapital::VERSION
 	end
 
+	def amount(n)
+    DigitalCapital.cb(n)
+  end
+
 	# http://www.917118.com/tool/rmb.html
-	def test_1
-		assert "壹亿玖仟玖佰肆拾玖万玖仟肆佰玖拾玖元玖角贰分"
-			DigitalCapital.cb(199499499.922)
+
+	def test_0
+		assert_equal "壹拾玖万玖仟零壹拾壹元叁角", amount(199011.3)
 	end
 
+	def test_1
+		assert_equal "壹亿玖仟玖佰肆拾玖万玖仟肆佰玖拾玖元玖角贰分壹厘", amount(199499499.921)
+	end
 
 	def test_2
-		assert "壹拾万零柒仟零壹元叁角壹分"
-			DigitalCapital.cb(10107001.315)
+		assert_equal "壹仟零壹拾万柒仟零佰零拾壹元叁角壹分", amount(10107001.31)
 	end
 
 	def test_3
-		assert "壹拾万零壹仟叁佰壹拾伍元整"
-			DigitalCapital.cb(1013151)
+		assert_equal "壹佰零壹万叁仟壹佰伍拾壹元整", amount(1013151)
 	end
 
+	def test_4
+		assert_equal "欠玖佰肆拾玖万玖仟肆佰玖拾玖元玖角贰分", amount(-9499499.92)
+	end
 end
